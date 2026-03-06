@@ -1,0 +1,24 @@
+users = {}
+
+while True:
+    choice = input("\n請選擇操作選項 (a 註冊, b 登入, c 退出) ? ")
+
+    if choice == 'a':
+        username = input("請輸入帳號 : ")
+        if username in users:
+            print("帳號已存在，請重新輸入！")
+        else:
+            password = input("請輸入密碼 : ")
+            users[username] = password
+            print("註冊成功！")
+            
+    elif choice == 'b':
+        username = input("請輸入帳號 : ")
+        password = input("請輸入密碼 : ")
+        if username in users and users[username] == password:
+            print("登入成功！")
+        else:
+            print("帳號或密碼錯誤！")
+            
+    elif choice == 'c':
+        break
